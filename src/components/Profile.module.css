@@ -1,0 +1,12 @@
+.content {
+    background-color: beige;
+    grid-area: c;
+  }
+  
+  .content img {
+    width: 100%;
+  }
+
+  .item {
+    color: red;
+  }

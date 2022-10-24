@@ -1,0 +1,16 @@
+.nav {
+  background-color: blueviolet;
+  grid-area: n;
+  height: 100%;
+}
+
+.item {
+  margin: 10px auto;
+  width: 100px;
+  color: white;
+  text-decoration: none;
+}
+
+.active {
+  color: blue;
+}
