@@ -1,0 +1,19 @@
+.item {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+
+  color: black;
+  background-color: white;
+}
+
+.item img {
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+}
+
+.item button {
+  border-radius: 12px;
+  height: 100%;
+}
