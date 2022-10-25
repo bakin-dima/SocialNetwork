@@ -1,0 +1,16 @@
+.postsBlock {
+  padding: 10px;
+}
+
+.postsAddArea {
+  display: flex;
+  justify-content: space-between;
+}
+
+.postsAddArea textarea {
+  width: 100%;
+  height: 50px;
+  border: none;
+  margin-right: 10px;
+  
+}
