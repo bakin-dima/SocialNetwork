@@ -3,11 +3,12 @@ import styles from "./Profile.module.css";
 import MyPosts from "./MyPosts/MyPosts";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
-const Profile = () => (
-  <div className={styles.content}>
-    <ProfileInfo firstName="Dima" lastName="Bakin" />
-    <MyPosts />
-  </div>
-);
-
+const Profile = (props) => {
+  return (
+    <div className={styles.content}>
+      <ProfileInfo firstName="Dima" lastName="Bakin" />
+      {<MyPosts postsData={props.state.postsData} />}
+    </div>
+  );
+};
 export default Profile;

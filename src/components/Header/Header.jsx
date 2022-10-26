@@ -3,7 +3,8 @@ import styles from "./Header.module.css";
 
 const Header = () => (
   <header className={styles.header}>
-    <img src="https://img.lovepik.com/element/45007/9994.png_300.png" alt=""></img>
+    <img src="https://i.stack.imgur.com/kyKz5.png" alt=""></img>
+    <h2>MSN</h2>
   </header>
 );
 
