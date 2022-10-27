@@ -1,0 +1,18 @@
+li {
+  width: 80px;
+  margin-top: 10px;
+}
+
+li a {
+  color: #3b444b;
+  text-decoration: none;
+}
+
+li:hover a {
+  color: #0e1111;
+}
+
+.active {
+  color: #0e1111;
+  font-weight: bold;
+}

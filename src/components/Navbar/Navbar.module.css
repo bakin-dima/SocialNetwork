@@ -1,8 +1,9 @@
 .nav {
   grid-area: n;
   display: flex;
-  align-items: flex-start;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
   background-color: #f5efe6;
 }
 
@@ -11,21 +12,10 @@ ul {
   list-style: none;
 }
 
-li {
-  width: 80px;
-  margin-top: 10px;
-}
-
-li a {
-  color: #3b444b;
-  text-decoration: none;
-}
-
-li:hover a {
-  color: #0e1111;
-}
-
-.active {
-  color: #0e1111;
-  font-weight: bold;
+.friendList {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 50px;
 }
