@@ -7,7 +7,7 @@ let state = {
       { id: 2, message: "It's my firs post!", likesCount: 13 },
       { id: 3, message: "I finally start my react-js learning", likesCount: 45 },
     ],
-    newPostText: "test-message",
+    newPostText: "",
   },
   messagesPage: {
     dialogsData: [
@@ -24,6 +24,7 @@ let state = {
       { id: 4, message: "Today i start my reactApp" },
       { id: 5, message: "Initial commit :)" },
     ],
+    newMessageText: "",
   },
   sidebar: {
     linksList: [
@@ -45,20 +46,37 @@ let state = {
   },
 };
 
-export let addPost = (postMessage) => {
+export let addPost = () => {
   let newPost = {
     id: state.profilePage.postsData.length + 1,
-    message: postMessage,
+    message: state.profilePage.newPostText,
     likesCount: 0,
   };
-  state.profilePage.postsData.push(newPost);
+  state.profilePage.postsData.unshift(newPost);
+  state.profilePage.newPostText = "";
   renderEntireTree(state);
 };
 
+export let updateNewPostText = (newText) => {
+  state.profilePage.newPostText = newText;
+  renderEntireTree(state);
+};
 
-// export let changeNewPostText = (newText) => {
-//   state.profilePage.newPostText;
-//   renderEntireTree(state);
-// };
+export let sendMessage = () => {
+  let newMessage = {
+    id: state.messagesPage.messagesData.length + 1,
+    message: state.messagesPage.newMessageText,
+  };
+  state.messagesPage.messagesData.unshift(newMessage);
+  state.messagesPage.newMessageText = "";
+  renderEntireTree(state);
+};
+
+export let updateNewMessageText = (newText) => {
+  state.messagesPage.newMessageText = newText;
+  renderEntireTree(state);
+};
+
+window.state = state;
 
 export default state;
