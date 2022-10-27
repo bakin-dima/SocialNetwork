@@ -3,6 +3,17 @@
 }
 
 .profileDescription {
-  padding: 10px;
   display: flex;
+  align-items: center;
+  display: flex;
+  margin-top: 10px;
+}
+
+.profileDescription div {
+  margin-left: 20px;
+}
+
+.profileDescription img {
+  width: 150px;
+  height: 150px;
 }

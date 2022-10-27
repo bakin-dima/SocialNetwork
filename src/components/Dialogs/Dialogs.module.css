@@ -33,12 +33,23 @@ a.active {
 }
 
 .message {
+  display: flex;
+  flex-direction: column;
+}
+
+.message div {
   min-height: 30px;
   display: flex;
+  word-break: break-all;
   align-items: center;
   background-color: #fcfcfd;
   margin: 5px 0 5px 0;
   padding: 10px;
+}
+
+.message span {
+  align-self: end;
+  font-size: 12px;
 }
 
 .sendMessage {

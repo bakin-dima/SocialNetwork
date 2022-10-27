@@ -3,8 +3,10 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+}
 
-  background-color: #fcfcfd;
+.avatar {
+  align-self: flex-start;
 }
 
 .item img {
@@ -18,8 +20,12 @@
 }
 
 .item p {
-  margin-left: 20px;
+  min-height: 40px;
+  background-color: #fcfcfd;
+  margin-left: 10px;
   flex-grow: 2;
+  word-break: break-all;
+  padding: 10px;
 }
 
 .likes {
