@@ -1,3 +1,7 @@
+import profileReducer from "./profileReducer";
+import sidebarReducer from "./sidebarReducer";
+import messagesReducer from "./messagesReducer";
+
 let store = {
   _state: {
     profilePage: {
@@ -25,21 +29,21 @@ let store = {
         { id: 5, name: "Michail" },
       ],
       messagesData: [
-        { id: 1, message: "Hi how are you", date: `${Date()}` },
-        { id: 2, message: "Today is be a great day", date: `${Date()}` },
-        { id: 3, message: "See you later guys", date: `${Date()}` },
-        { id: 4, message: "Today i start my reactApp", date: `${Date()}` },
-        { id: 5, message: "Initial commit :)", date: `${Date()}` },
+        { id: 1, message: "Hi how are you", date: "10.09.2022" },
+        { id: 2, message: "Today is be a great day", date: "13.09.2022" },
+        { id: 3, message: "See you later guys", date: "07.10.2022" },
+        { id: 4, message: "Today i start my reactApp", date: "25.10.2022" },
+        { id: 5, message: "Initial commit :)", date: "10.11.2022" },
       ],
       newMessageText: "",
     },
     sidebar: {
       linksList: [
-        { linkTitle: "Profile", linkPath: "/profile", props: "" },
-        { linkTitle: "Messages", linkPath: "/dialogs", props: "" },
-        { linkTitle: "News", linkPath: "/news", props: "" },
-        { linkTitle: "Music", linkPath: "/music", props: "" },
-        { linkTitle: "Settings", linkPath: "/settings", props: "" },
+        { linkTitle: "Profile", linkPath: "/profile" },
+        { linkTitle: "Messages", linkPath: "/dialogs" },
+        { linkTitle: "News", linkPath: "/news" },
+        { linkTitle: "Music", linkPath: "/music" },
+        { linkTitle: "Settings", linkPath: "/settings" },
       ],
 
       friendsList: [
@@ -52,48 +56,26 @@ let store = {
       ],
     },
   },
-  getState() {
-    return this._state;
-  },
   _callSubscriber() {
     console.log("State changed");
   },
-  addPost() {
-    let newPost = {
-      id: this._state.profilePage.postsData.length + 1,
-      message: this._state.profilePage.newPostText,
-      likesCount: 0,
-    };
-    this._state.profilePage.postsData.unshift(newPost);
-    this._state.profilePage.newPostText = "";
-    this._callSubscriber(this._state);
+  getState() {
+    return this._state;
   },
-  updateNewPostText(newText) {
-    this._state.profilePage.newPostText = newText;
-    this._callSubscriber(this._state);
-  },
-  sendMessage() {
-    let date = new Date();
-    let newMessage = {
-      id: this._state.messagesPage.messagesData.length + 1,
-      message: this._state.messagesPage.newMessageText,
-      date: `${date}`,
-    };
-    this._state.messagesPage.messagesData.unshift(newMessage);
-    this._state.messagesPage.newMessageText = "";
-    this._callSubscriber(this._state);
-  },
-  updateNewMessageText(newText) {
-    this._state.messagesPage.newMessageText = newText;
-    this._callSubscriber(this._state);
-  },
-
   subscribe(observer) {
     this._callSubscriber = observer;
   },
+  dispatch(action) {
+    this._state.profilePage = profileReducer(this._state.profilePage, action);
+    this._state.messagesPage = messagesReducer(this._state.messagesPage, action);
+    this._state.sidebar = sidebarReducer(this._state.sidebar, action);
+
+    this._callSubscriber(this._state);
+  },
 };
+
+
+
 
 window.state = store;
 export default store;
-
-// store - OOP

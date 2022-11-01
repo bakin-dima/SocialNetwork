@@ -14,7 +14,7 @@ const Posts = (props) => (
     <div className={styles.likes}>
       {props.likesCount}
       <button>
-        <img src="https://www.freepnglogos.com/uploads/like-png/like-png-twitter-verification-for-everyone-dtw-6.png" alt="like" />
+        {/* <img src="https://www.freepnglogos.com/uploads/like-png/like-png-twitter-verification-for-everyone-dtw-6.png" alt="like" /> */}
       </button>
     </div>
   </div>
