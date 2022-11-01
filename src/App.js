@@ -15,7 +15,7 @@ const App = (props) => {
       <div className="app-wrapper">
         <div className="app-wrapper__main">
           <Header />
-          <Navbar state={props.state.sidebar} />
+          <Navbar sidebar={props.state.sidebar} />
           <div className="app-wrapper__content">
             <Routes>
               <Route path="/profile" element={<Profile profilePage={props.state.profilePage} addPost={props.addPost} updateNewPostText={props.updateNewPostText} />} />

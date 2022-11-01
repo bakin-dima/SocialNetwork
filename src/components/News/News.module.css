@@ -1,0 +1,12 @@
+.news {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  overflow-y: scroll;
+}
+
+.news div {
+  margin-top: 10px;
+}

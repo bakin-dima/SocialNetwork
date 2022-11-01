@@ -5,8 +5,8 @@ import NavbarFriend from "./NavbarFriend/NavbarFriend";
 import styles from "./Navbar.module.css";
 
 const Navbar = (props) => {
-  let linkItems = props.state.linksList.map((link) => <NavbarLink title={link.linkTitle} path={link.linkPath} />);
-  let FriendsItems = props.state.friendsList.map((friend) => <NavbarFriend {...friend} />);
+  let linkItems = props.sidebar.linksList.map((link) => <NavbarLink title={link.linkTitle} path={link.linkPath} />);
+  let FriendsItems = props.sidebar.friendsList.map((friend) => <NavbarFriend {...friend} />);
   return (
     <nav className={styles.nav}>
       <ul>{linkItems}</ul>

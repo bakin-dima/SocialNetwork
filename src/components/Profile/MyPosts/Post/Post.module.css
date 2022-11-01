@@ -1,15 +1,18 @@
 .item {
   margin-top: 20px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
 }
 
-.avatar {
-  align-self: flex-start;
+.item div {
+  display: flex;
+  width: 100%;
 }
 
-.item img {
+.avatar {
+  align-self: flex-start;
   width: 60px;
   height: 60px;
 }
@@ -30,5 +33,20 @@
 
 .likes {
   display: flex;
-  align-items: center;
+  justify-content: flex-end;
+}
+
+.likes button {
+  margin-left: 5px;
+  border: none;
+  opacity: 0.7;
+}
+
+.likes button:hover {
+  opacity: 1;
+}
+
+.likes img {
+  width: 20px;
+  height: 20px;
 }
