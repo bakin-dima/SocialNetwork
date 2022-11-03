@@ -1,5 +1,4 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 import NavbarLink from "./NavbarLink/NavbarLink";
 import NavbarFriend from "./NavbarFriend/NavbarFriend";
 import styles from "./Navbar.module.css";
