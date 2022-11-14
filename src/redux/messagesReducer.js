@@ -22,11 +22,10 @@ let initialState = {
 const dialogsReducer = (state = initialState, action) => {
   switch (action.type) {
     case SEND_MESSAGE:
-      let date = new Date().toLocaleDateString();
       let newMessage = {
         id: state.messagesData.length + 1,
         message: state.newMessageText,
-        date: `${date}`,
+        date: new Date().toLocaleDateString(),
       };
       state.messagesData.unshift(newMessage);
       state.newMessageText = "";
