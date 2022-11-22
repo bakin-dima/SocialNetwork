@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header/Header";
 import Navbar from "./components/Navbar/Navbar";
@@ -11,23 +11,21 @@ import DialogsContainer from "./components/Dialogs/DialogsContainer";
 
 const App = (props) => {
   return (
-    <BrowserRouter>
-      <div className="app-wrapper">
-        <div className="app-wrapper__main">
-          <Header />
-          <Navbar sidebar={props.store.getState().sidebar} />
-          <div className="app-wrapper__content">
-            <Routes>
-              <Route path="/profile" element={<Profile store={props.store} />} />
-              <Route path="/dialogs/*" element={<DialogsContainer store={props.store} />} />
-              <Route path="/news" element={<News />} />
-              <Route path="/music" element={<Music />} />
-              <Route path="/settings" element={<Settings />} />
-            </Routes>
-          </div>
+    <div className="app-wrapper">
+      <div className="app-wrapper__main">
+        <Header />
+        {/* <Navbar /> */}
+        <div className="app-wrapper__content">
+          <Routes>
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/dialogs/*" element={<DialogsContainer />} />
+            <Route path="/news" element={<News />} />
+            <Route path="/music" element={<Music />} />
+            <Route path="/settings" element={<Settings />} />
+          </Routes>
         </div>
       </div>
-    </BrowserRouter>
+    </div>
   );
 };
 

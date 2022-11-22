@@ -5,13 +5,19 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "./index.css";
+import { BrowserRouter } from "react-router-dom";
+import StoreContext, { Provider } from "./storeContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 let rerenderEntireTree = (state) => {
   root.render(
     <React.StrictMode>
-      <App state={state} store={store} dispatch={store.dispatch.bind(store)} />
+      <BrowserRouter>
+        <Provider store={store}>
+          <App />
+        </Provider>
+      </BrowserRouter>
     </React.StrictMode>
   );
 };
