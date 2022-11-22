@@ -1,0 +1,53 @@
+.users {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-starts;
+  align-items: center;
+}
+
+.user {
+  width: 100%;
+  max-width: 300px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.image {
+  display: flex;
+  flex-direction: column;
+}
+
+.userAvatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+
+.image button {
+  width: 100%;
+  height: 25px;
+  background-color: #fcfcfd;
+  border-width: 0;
+  box-sizing: border-box;
+  color: #36395a;
+  cursor: pointer;
+}
+
+.data {
+  width: 100%;
+  flex-grow: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.data p {
+  font-size: 0.9rem;
+  color: #3b444b;
+}
+.data span {
+  font-size: 0.7rem;
+  color: #3b444b;
+}
