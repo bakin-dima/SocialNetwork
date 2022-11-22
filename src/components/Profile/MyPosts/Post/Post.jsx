@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Post.module.css";
 
 const Posts = (props) => (
-  <div className={styles.item}>
+  <div id={props.id} className={styles.item}>
     <div>
       <img
         className={styles.avatar}
@@ -13,9 +13,7 @@ const Posts = (props) => (
     </div>
     <div className={styles.likes}>
       {props.likesCount}
-      <button>
-        {/* <img src="https://www.freepnglogos.com/uploads/like-png/like-png-twitter-verification-for-everyone-dtw-6.png" alt="like" /> */}
-      </button>
+      <button>{<img src="https://www.freepnglogos.com/uploads/like-png/like-png-twitter-verification-for-everyone-dtw-6.png" alt="like" />}</button>
     </div>
   </div>
 );

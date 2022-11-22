@@ -11,9 +11,10 @@ let initialState = {
     userDescription: "Learning JS/FE React",
   },
   postsData: [
-    { id: 1, message: "Hello everybody!", likesCount: 15 },
-    { id: 2, message: "It's my firs post!", likesCount: 13 },
-    { id: 3, message: "I finally start my react-js learning", likesCount: 45 },
+    { id: 4, message: "Hello everybody!", likesCount: 15 },
+    { id: 3, message: "It's my firs post!", likesCount: 13 },
+    { id: 2, message: "I finally start my react-js learning", likesCount: 45 },
+    { id: 1, message: "First test message", likesCount: 3 },
   ],
   newPostText: "",
 };
@@ -21,17 +22,17 @@ let initialState = {
 const profileReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_POST:
-      let newPost = {
-        id: state.postsData.length + 1,
-        message: state.newPostText,
-        likesCount: 0,
+      let newPost = state.newPostText;
+      return {
+        ...state,
+        postsData: [{ id: state.postsData.length + 1, message: newPost, likesCount: 0 }, ...state.postsData],
+        newPostText: "",
       };
-      state.postsData.unshift(newPost);
-      state.newPostText = "";
-      return state;
     case UPDATE_NEW_POST_TEXT:
-      state.newPostText = action.newText;
-      return state;
+      return {
+        ...state,
+        newPostText: action.newText,
+      };
     default:
       return state;
   }

@@ -14,9 +14,9 @@ let store = {
         userDescription: "Learning JS/FE React",
       },
       postsData: [
-        { id: 1, message: "Hello everybody!", likesCount: 15 },
-        { id: 2, message: "It's my firs post!", likesCount: 13 },
-        { id: 3, message: "I finally start my react-js learning", likesCount: 45 },
+        { id: 3, message: "It's my firs post!", likesCount: 13 },
+        { id: 2, message: "I finally start my react-js learning", likesCount: 45 },
+        { id: 1, message: "First test message", likesCount: 3 },
       ],
       newPostText: "",
     },
