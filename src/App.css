@@ -19,7 +19,7 @@
     "n c c";
 
   grid-template-rows: 60px 1fr;
-  grid-template-columns: 200px 10fr;
+  grid-template-columns: 2fr 10fr;
 
   width: 100%;
   max-width: 1200px;

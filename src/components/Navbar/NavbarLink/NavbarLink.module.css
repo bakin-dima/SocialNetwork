@@ -1,6 +1,7 @@
 li {
   width: 80px;
   margin-top: 10px;
+  text-transform: uppercase;
 }
 
 li a {
