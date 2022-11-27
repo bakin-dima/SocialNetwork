@@ -7,10 +7,14 @@
 
 .user {
   width: 100%;
-  max-width: 300px;
+  /* max-width: 300px; */
   display: flex;
   justify-content: space-between;
   padding: 10px;
+  position: relative;
+  margin: 0px 15px 10px 15px;
+  background-color: rgba(174, 189, 202, 0.2);
+  border-radius: 5px;
 }
 
 .image {
@@ -21,7 +25,6 @@
 .userAvatar {
   width: 70px;
   height: 70px;
-  border-radius: 50%;
 }
 
 .image button {

@@ -1,38 +1,41 @@
+import axios from "axios";
 import React from "react";
 import styles from "./Users.module.css";
+import user_avatar_placeholder from "../../assets/images/user_avatar_placeholder.png";
 
 let Users = (props) => {
-  if (props.users.length === 0) {
-    props.setUsers([
-      { id: 1, photoUrl: "https://www.w3schools.com/w3images/avatar2.png", followed: false, fullName: "Dima B", status: "I study React-Redux", location: { city: "Minsk", country: "Belarus" } },
-      { id: 2, photoUrl: "https://www.w3schools.com/w3images/avatar2.png", followed: false, fullName: "Vadim A", status: "I am a boss to", location: { city: "Minsk", country: "Belarus" } },
-      { id: 3, photoUrl: "https://www.w3schools.com/w3images/avatar2.png", followed: true, fullName: "Kate S", status: "Hello motherfucker", location: { city: "Minsk", country: "Belarus" } },
-    ]);
-  }
+  let getUsers = () => {
+    if (props.users.length === 0) {
+      axios.get("https://social-network.samuraijs.com/api/1.0/users").then((response) => {
+        props.setUsers(response.data.items);
+      });
+    }
+  };
+
   return (
     <div className={styles.users}>
-      {props.users.map((u) => (
-        <div key={u.id} className={styles.user}>
+      <button onClick={getUsers}>Get users</button>
+
+      {props.users.map((user) => (
+        <div key={user.id} className={styles.user}>
           <div className={styles.image}>
             <div>
-              <img src={u.photoUrl} className={styles.userAvatar} alt="Avatar" />
+              <img src={user.photos.small != null ? user.photos.small : user_avatar_placeholder} className={styles.userAvatar} alt="User avatar" />
             </div>
             <div>
               {
                 // prettier-ignore
-                u.followed 
-              ? (<button onClick={() => {props.unfollow(u.id);}}>Unfollow</button>) 
-              : (<button onClick={() => {props.follow(u.id);}}>Follow</button>)
+                user.followed 
+              ? (<button onClick={() => {props.unfollow(user.id);}}>Unfollow</button>) 
+              : (<button onClick={() => {props.follow(user.id);}}>Follow</button>)
               }
             </div>
           </div>
 
           <div className={styles.data}>
-            <h3>{u.fullName}</h3>
-            <p>{u.status}</p>
-            <span>
-              {u.location.country} {u.location.city}
-            </span>
+            <h3>{user.name}</h3>
+            <p>{user.status}</p>
+            <span>{"{user.location.country} {user.location.city}"}</span>
           </div>
         </div>
       ))}
