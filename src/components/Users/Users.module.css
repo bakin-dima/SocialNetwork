@@ -7,7 +7,7 @@
 
 .user {
   width: 100%;
-  max-width: 300px;
+  max-width: 320px;
   display: flex;
   padding: 10px;
   background-color: rgba(252, 252, 253, 0.9);
@@ -43,33 +43,44 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 10px 10px 10px 15px;
+  padding: 0px 10px 0px 15px;
 }
 
 .data p {
-  font-size: 0.9rem;
-  color: #3b444b;
-}
-.data span {
+  height: 100%;
+  display: flex;
+  align-items: center;
   font-size: 0.7rem;
   color: #3b444b;
 }
 
 .pages {
   display: flex;
-  margin: 0px 40px 10px 40px;
-  overflow-x: scroll;
-  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
 }
 
-.pages span {
-  font-size: 0.9rem;
-  margin: 0px 2px 0px 2px;
+.pages button {
   color: #36395a;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  margin: 2px;
+  padding: 5px;
+}
+
+.pagesList {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pagesList button {
+  font-size: 0.8rem;
 }
 
 .pages .selectedPage {
-  font-weight: bold;
-
-  color: #000000;
+  background-color: #aebdca;
+  color: #fcfcfd;
+  border-radius: 4px;
 }

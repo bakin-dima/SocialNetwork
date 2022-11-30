@@ -1,5 +1,3 @@
-import { type } from "@testing-library/user-event/dist/type";
-
 const FOLLOW = "FOLLOW";
 const UNFOLLOW = "UNFOLLOW";
 const SET_USERS = "SET_USERS";
@@ -9,7 +7,7 @@ const TOGGLE_IS_FETCHING = "TOGGLE_IS_FETCHING";
 
 let initialState = {
   users: [],
-  pageSize: 18,
+  pageSize: 15,
   totalUsersCount: 0,
   currentPage: 1,
   isFetching: true,
