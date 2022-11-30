@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./Users.module.css";
 import user_avatar_placeholder from "../../assets/images/user_avatar_placeholder.png";
+import { NavLink } from "react-router-dom";
 
 let Users = (props) => {
   let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
@@ -22,7 +23,9 @@ let Users = (props) => {
           <div key={user.id} className={styles.user}>
             <div className={styles.image}>
               <div>
-                <img src={user.photos.small != null ? user.photos.small : user_avatar_placeholder} className={styles.userAvatar} alt="User avatar" />
+                <NavLink to={"/profile/" + user.id}>
+                  <img src={user.photos.small != null ? user.photos.small : user_avatar_placeholder} className={styles.userAvatar} alt="User avatar" />
+                </NavLink>
               </div>
               <div>
                 {

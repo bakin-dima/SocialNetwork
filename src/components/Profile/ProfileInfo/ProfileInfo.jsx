@@ -1,19 +1,24 @@
 import React from "react";
+import Preloader from "../../common/preloader/Preloader";
 import styles from "./ProfileInfo.module.css";
+import userPhoto from "../../../assets/images/user_avatar_placeholder.png";
 
 const ProfileInfo = (props) => {
+  if (!props.profile) {
+    return <Preloader />;
+  }
+
   return (
     <div className={styles.content}>
       <div className={styles.profileImage}>
-        <img src={props.userData.userBackground} alt="userBackground" />
+        <img src="https://images.ctfassets.net/hrltx12pl8hq/7yQR5uJhwEkRfjwMFJ7bUK/dc52a0913e8ff8b5c276177890eb0129/offset_comp_772626-opt.jpg?fit=fill&w=800&h=300" alt="userBackground" />
       </div>
       <div className={styles.profileDescription}>
-        <img className={styles.avatar} src={props.userData.userAvatar} alt="avatar" />
+        <img className={styles.avatar} src={props.profile.photos.large != null ? props.profile.photos.large : userPhoto} alt="avatar" />
 
         <div>
-          <div>{props.userData.userFirstName}</div>
-          <div>{props.userData.userLastName}</div>
-          <div>{props.userData.userDescription}</div>
+          <div>{props.profile.fullName}</div>
+          <div>{props.profile.aboutMe}</div>
         </div>
       </div>
     </div>
