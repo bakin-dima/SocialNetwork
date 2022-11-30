@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./Header.module.css";
-import Preloader from "../common/preloader/Preloader";
+//import Preloader from "../common/preloader/Preloader";
 import user_avatar_placeholder from "../../assets/images/user_avatar_placeholder.png";
 
 const Header = (props) => {

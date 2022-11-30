@@ -16,6 +16,7 @@
   border-width: 0;
   box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
   box-sizing: border-box;
+  position: relative;
 }
 
 .image {
@@ -31,11 +32,45 @@
 .image button {
   width: 100%;
   height: 25px;
-  background-color: #fcfcfd;
+  font-size: 0.9rem;
+  background-color: transparent;
   border-width: 0;
   box-sizing: border-box;
   color: #36395a;
+  border-radius: 4px;
   cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+
+.image button:disabled {
+  background-color: #d6d6e7;
+  color: #d6d6e7;
+}
+
+.image .follow:hover {
+  background-color: #ff0800;
+  color: #d6d6e7;
+}
+
+.follow::before {
+  content: "Followed";
+  font-size: 0.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 13px;
+  background-color: #018749;
+  border-radius: 4px;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  color: #d6d6e7;
+}
+
+.image .unfollow:hover {
+  background-color: #018749;
+  color: #d6d6e7;
 }
 
 .data {
