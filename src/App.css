@@ -35,5 +35,5 @@
 .app-wrapper__content {
   background-color: #f5efe6;
   grid-area: c;
-  overflow: scroll;
+  overflow-y: scroll;
 }

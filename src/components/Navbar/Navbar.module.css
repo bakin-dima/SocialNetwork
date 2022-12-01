@@ -8,7 +8,6 @@
 }
 
 ul {
-  margin-top: 20px;
   list-style: none;
 }
 
@@ -17,5 +16,4 @@ ul {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-evenly;
-  margin-top: 50px;
 }

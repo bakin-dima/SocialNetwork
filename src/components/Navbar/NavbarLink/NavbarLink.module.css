@@ -1,5 +1,4 @@
 li {
-  width: 80px;
   margin-top: 10px;
   text-transform: uppercase;
 }
@@ -7,6 +6,12 @@ li {
 li a {
   color: #3b444b;
   text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+li a img {
+  margin-right: 5px;
 }
 
 li:hover a {
@@ -16,4 +21,10 @@ li:hover a {
 .active {
   color: #0e1111;
   font-weight: bold;
+}
+
+@media screen and (max-width: 500px) {
+  li a span {
+    display: none;
+  }
 }

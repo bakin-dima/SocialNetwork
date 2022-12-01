@@ -1,6 +1,6 @@
 let initialState = {
   linksList: [
-    { id: 1, linkTitle: "Profile", linkPath: "/profile" },
+    { id: 1, linkTitle: "Profile", linkPath: "/profile" , },
     { id: 2, linkTitle: "Messages", linkPath: "/dialogs" },
     { id: 3, linkTitle: "Users", linkPath: "/users" },
     { id: 4, linkTitle: "News", linkPath: "/news" },

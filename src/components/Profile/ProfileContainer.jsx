@@ -20,7 +20,7 @@ class ProfileContainer extends React.Component {
   componentDidMount() {
     let userId = this.props.router.params.userId;
     if (!userId) {
-      userId = 2;
+      userId = 26827;
     }
     usersAPI.currentUser(userId).then((data) => {
       this.props.setUserProfile(data);
@@ -29,7 +29,7 @@ class ProfileContainer extends React.Component {
   componentDidUpdate(prevProps) {
     let userId = this.props.router.params.userId;
     if (prevProps.router.params.userId !== userId) {
-      let userId = 2;
+      let userId = 26827;
       usersAPI.currentUser(userId).then((data) => {
         this.props.setUserProfile(data);
       });
