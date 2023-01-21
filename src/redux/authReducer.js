@@ -1,4 +1,4 @@
-import { authAPI, usersAPI } from "../api/api";
+import { authAPI } from "../api/api";
 
 const SET_USER_DATA = "SET_USER_DATA";
 const SET_CURRENT_USER = "SET_CURRENT_USER";
@@ -9,7 +9,6 @@ let initialState = {
   email: null,
   isAuth: false,
   isFetching: true,
-  currentUser: null,
 };
 
 const authReducer = (state = initialState, action) => {
