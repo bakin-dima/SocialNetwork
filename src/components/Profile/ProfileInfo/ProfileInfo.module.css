@@ -9,11 +9,11 @@
   margin-top: 10px;
 }
 
-.profileDescription div {
-  margin-left: 20px;
-}
-
 .profileDescription img {
   width: 120px;
   height: 120px;
+}
+
+.Description {
+  margin-left: 20px;
 }
