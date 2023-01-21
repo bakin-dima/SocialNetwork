@@ -15,7 +15,7 @@ const Header = (props) => {
 
       <h2>ReactJS Study Project</h2>
       <div className={styles.loginBlock}>
-        {props.isAuth && props.currentUser ? props.currentUser.fullName : <NavLink to={"login/"}>Login</NavLink>}
+        {props.isAuth ? props.login : <NavLink to={"login/"}>Login</NavLink>}
         {props.currentUser ? <img src={props.currentUser.photos.small !== null ? props.currentUser.photos.small : user_avatar_placeholder} alt="User Avatar" /> : ""}
       </div>
     </header>
