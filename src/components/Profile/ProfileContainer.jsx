@@ -5,15 +5,17 @@ import Profile from "./Profile";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { withAuthRedirect } from "../../hoc/withAuthRedirect";
 import { compose } from "redux";
+import Login from "../Login/Login";
+
 function withRouter(Component) {
-  function ComponentWithRouterProp(props) {
+  function ComponentWithRouterProps(props) {
     let location = useLocation();
     let navigate = useNavigate();
     let params = useParams();
     return <Component {...props} router={{ location, navigate, params }} />;
   }
 
-  return ComponentWithRouterProp;
+  return ComponentWithRouterProps;
 }
 
 class ProfileContainer extends React.Component {
@@ -35,6 +37,7 @@ class ProfileContainer extends React.Component {
   }
 
   render() {
+    if (!this.props.router.params.userId && !this.props.authorizedUserId) return <Login/>
     return <Profile {...this.props} profile={this.props.profile} status={this.props.status} updateStatus={this.props.updateStatus} />;
   }
 }
