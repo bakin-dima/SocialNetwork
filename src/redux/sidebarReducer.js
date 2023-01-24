@@ -1,12 +1,16 @@
+const links = ["Profile", "Dialogs", "Users", "News", "Music", "Settings"];
+
 let initialState = {
-  linksList: [
-    { id: 1, linkTitle: "Profile", linkPath: "/profile" , },
-    { id: 2, linkTitle: "Messages", linkPath: "/dialogs" },
-    { id: 3, linkTitle: "Users", linkPath: "/users" },
-    { id: 4, linkTitle: "News", linkPath: "/news" },
-    { id: 5, linkTitle: "Music", linkPath: "/music" },
-    { id: 6, linkTitle: "Settings", linkPath: "/settings" },
-  ],
+  // linksList: [
+  //   { id: 1, linkTitle: "Profile", linkPath: "/profile" },
+  //   { id: 2, linkTitle: "Messages", linkPath: "/dialogs" },
+  //   { id: 3, linkTitle: "Users", linkPath: "/users" },
+  //   { id: 4, linkTitle: "News", linkPath: "/news" },
+  //   { id: 5, linkTitle: "Music", linkPath: "/music" },
+  //   { id: 6, linkTitle: "Settings", linkPath: "/settings" },
+  // ],
+
+  linksList: links.map((el, id) => ({ id: id + 1, linkTitle: el, linkPath: `/${el}` })),
 
   friendsList: [
     { id: 1, friendFirstName: "Vadim", friendLastName: "A", friendAvatar: "https://www.w3schools.com/w3images/avatar2.png" },

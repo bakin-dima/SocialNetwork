@@ -37,7 +37,7 @@ class ProfileContainer extends React.Component {
   }
 
   render() {
-    if (!this.props.router.params.userId && !this.props.authorizedUserId) return <Login/>
+    if (!this.props.router.params.userId && !this.props.authorizedUserId) return <Login />;
     return <Profile {...this.props} profile={this.props.profile} status={this.props.status} updateStatus={this.props.updateStatus} />;
   }
 }

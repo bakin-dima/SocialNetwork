@@ -51,29 +51,31 @@ let Users = (props) => {
                   <img src={user.photos.small != null ? user.photos.small : user_avatar_placeholder} className={styles.userAvatar} alt="User avatar" />
                 </NavLink>
               </div>
-              <div>
-                {user.followed ? (
-                  <button
-                    disabled={props.followingInProgress.some((id) => id === user.id)}
-                    className={styles.follow}
-                    onClick={() => {
-                      props.unfollow(user.id);
-                    }}
-                  >
-                    Unfollow
-                  </button>
-                ) : (
-                  <button
-                    disabled={props.followingInProgress.some((id) => id === user.id)}
-                    className={styles.unfollow}
-                    onClick={() => {
-                      props.follow(user.id);
-                    }}
-                  >
-                    Follow
-                  </button>
-                )}
-              </div>
+              {props.isAuth && (
+                <div>
+                  {user.followed ? (
+                    <button
+                      disabled={props.followingInProgress.some((id) => id === user.id)}
+                      className={styles.follow}
+                      onClick={() => {
+                        props.unfollow(user.id);
+                      }}
+                    >
+                      Unfollow
+                    </button>
+                  ) : (
+                    <button
+                      disabled={props.followingInProgress.some((id) => id === user.id)}
+                      className={styles.unfollow}
+                      onClick={() => {
+                        props.follow(user.id);
+                      }}
+                    >
+                      Follow
+                    </button>
+                  )}
+                </div>
+              )}
             </div>
             <div className={styles.data}>
               <h3>{user.name}</h3>
