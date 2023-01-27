@@ -6,10 +6,10 @@ const SET_STATUS = "SET_STATUS";
 
 let initialState = {
   postsData: [
-    { id: 4, message: "Hello everybody!", likesCount: 15 },
-    { id: 3, message: "It's my firs post!", likesCount: 13 },
-    { id: 2, message: "I finally start my react-js learning", likesCount: 45 },
     { id: 1, message: "First test message", likesCount: 3 },
+    { id: 2, message: "I finally start my react-js learning", likesCount: 45 },
+    { id: 3, message: "It's my firs post!", likesCount: 13 },
+    { id: 4, message: "Hello everybody!", likesCount: 15 },
   ],
   profile: null,
   status: "",
@@ -21,7 +21,7 @@ const profileReducer = (state = initialState, action) => {
       let newPost = action.newPostText;
       return {
         ...state,
-        postsData: [{ id: state.postsData.length + 1, message: newPost, likesCount: 0 }, ...state.postsData],
+        postsData: [...state.postsData, { id: state.postsData.length + 1, message: newPost, likesCount: 0 }],
       };
 
     case SET_USER_PROFILE:
