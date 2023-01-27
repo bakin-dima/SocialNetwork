@@ -1,5 +1,8 @@
 {
   "name": "react-app-1",
+  "jest": {
+    "transformIgnorePatterns": ["node_modules/(?!axios)/"]
+},
   "version": "0.1.0",
   "private": true,
   "dependencies": {
