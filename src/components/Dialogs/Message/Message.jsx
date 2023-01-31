@@ -1,11 +1,11 @@
 import React from "react";
 import styles from "../Dialogs.module.css";
 
-const Message = (props) => {
+const Message = ({ id, message, date, ...props }) => {
   return (
-    <div className={styles.message} id={props.id}>
-      <div>{props.message}</div>
-      <span>{props.date}</span>
+    <div className={styles.message} id={id}>
+      <div>{message}</div>
+      <span>{date}</span>
     </div>
   );
 };

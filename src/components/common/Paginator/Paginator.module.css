@@ -1,0 +1,31 @@
+/*? PAGE SELECTOR STYLES */
+
+.pages {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.pages button {
+  color: #36395a;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  padding: 2px 3px 2px 3px;
+}
+
+.pagesList {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pagesList button {
+  font-size: 0.8rem;
+}
+
+.pages .selectedPage {
+  background-color: #aebdca;
+  color: #fcfcfd;
+  border-radius: 4px;
+}
