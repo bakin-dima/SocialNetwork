@@ -15,6 +15,10 @@
   padding: 2px 3px 2px 3px;
 }
 
+.paginator button:disabled {
+  opacity: 0.5;
+}
+
 .paginatorItemsList {
   display: flex;
   justify-content: space-between;
