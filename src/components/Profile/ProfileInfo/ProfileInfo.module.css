@@ -5,6 +5,32 @@
   margin-top: 10px;
 }
 
+.profileAvatar {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.avatarUpload {
+  display: none;
+}
+
+.avatarUploadLabel {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  opacity: 0;
+}
+
+.avatarUploadLabel:hover {
+  opacity: 1;
+  fill: aliceblue;
+}
+
 .avatar {
   width: 120px;
   height: 120px;
