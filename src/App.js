@@ -1,5 +1,5 @@
 import React, { Component, lazy, Suspense } from "react";
-import { Navigate, Route, Routes, BrowserRouter } from "react-router-dom";
+import { Navigate, Route, Routes, BrowserRouter, HashRouter } from "react-router-dom";
 import { connect, Provider } from "react-redux";
 import "./App.css";
 import store from "./redux/reduxStore";
@@ -64,11 +64,11 @@ let AppContainer = connect(mapStateToProps, { initializeApp })(App);
 
 const SocialNetworkJsApp = (props) => {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Provider store={store}>
         <AppContainer />
       </Provider>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
