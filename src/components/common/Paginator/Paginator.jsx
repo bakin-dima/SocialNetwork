@@ -1,42 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Paginator.module.css";
 
-let Paginator = ({ totalUsersCount, pageSize, currentPage, onPageChanged }) => {
-  let pagesCount = Math.ceil(totalUsersCount / pageSize);
-  let pages = [];
-
-  let step = 3;
-  let firstPage = currentPage - step;
-  let lastPage = currentPage + step;
+let Paginator = ({ totalItemsCount, pageSize, currentPage, onPageChanged, portionSize = 10 }) => {
+  const pagesCount = Math.ceil(totalItemsCount / pageSize);
+  const pages = [];
 
   for (let i = 1; i <= pagesCount; i++) {
-    if (lastPage > pagesCount) {
-      lastPage = pagesCount;
-    }
-    if (firstPage <= 0) {
-      firstPage = 1;
-      lastPage = step * 2 + 1;
-    }
-    if (currentPage + step >= pagesCount) {
-      firstPage = pagesCount - step * 2;
-    }
-    if (i >= firstPage && i <= lastPage) {
-      pages.push(i);
-    }
+    pages.push(i);
   }
 
+  let portionCount = Math.ceil(pagesCount / portionSize);
+  let [portionNumber, setPortionNumber] = useState(Math.ceil(currentPage / portionSize));
+  let leftPortionPageNumber = (portionNumber - 1) * portionSize + 1;
+  let rightPortionPageNumber = portionNumber * portionSize;
+
   return (
-    <div className={styles.pages}>
-      <button onClick={(e) => onPageChanged(1)}>&lt;&lt;</button>
-      <button onClick={(e) => onPageChanged(currentPage - 1 <= 0 ? 1 : currentPage - 1)}>&lt;</button>
-      <div className={styles.pagesList}>
-        {pages.map((page) =>
-          // prettier-ignore
-          <button className={currentPage === page ? styles.selectedPage : ""} key={page} onClick={(e) => onPageChanged(page)}>{page}</button>
-        )}
+    <div className={styles.paginator}>
+      {portionNumber > 1 && <button onClick={() => setPortionNumber(1)}>&lt;&lt;</button>}
+      {portionNumber > 1 && <button onClick={() => setPortionNumber(portionNumber - 1)}>&lt;</button>}
+      <div className={styles.paginatorItemsList}>
+        {pages
+          .filter((page) => page >= leftPortionPageNumber && page <= rightPortionPageNumber)
+          .map((page) => (
+            <button className={currentPage === page ? styles.active : ""} key={page} onClick={(e) => onPageChanged(page)}>
+              {page}
+            </button>
+          ))}
       </div>
-      <button onClick={(e) => onPageChanged(currentPage + 1 >= pagesCount ? pagesCount : currentPage + 1)}>&gt;</button>
-      <button onClick={(e) => onPageChanged(pagesCount)}>&gt;&gt;</button>
+      {portionCount > portionNumber && <button onClick={() => setPortionNumber(portionNumber + 1)}>&gt;</button>}
+      {portionCount > portionNumber && <button onClick={() => setPortionNumber(portionCount)}>&gt;&gt;</button>}
     </div>
   );
 };
