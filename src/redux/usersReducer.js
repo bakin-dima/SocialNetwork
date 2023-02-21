@@ -72,12 +72,14 @@ export const toggleFollowingProgress = (isFetching, userId) => ({ type: TOGGLE_I
 export const setFollowedUsers = (followedUsers) => ({ type: GET_FOLLOWED_USERS, followedUsers });
 
 export const requestFollowedUsers = () => async (dispatch) => {
-  // dispatch(toggleIsFetching(true));
-  let data = await usersAPI.getFollowedUsers();
-
-  dispatch(setFollowedUsers(data.items));
-
-  // dispatch(toggleIsFetching(false));
+  try {
+    let data = await usersAPI.getFollowedUsers();
+    if (data.error === null) {
+      dispatch(setFollowedUsers(data.items));
+    }
+  } catch (error) {
+    debugger;
+  }
 };
 
 export const requestUsers = (currentPage, pageSize) => async (dispatch) => {
