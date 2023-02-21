@@ -13,6 +13,10 @@ export const usersAPI = {
     return instance.get(`users?page=${currentPage}&count=${pageSize}`).then((response) => response.data);
   },
 
+  getFollowedUsers() {
+    return instance.get(`users?friend=true&count=100`).then((response) => response.data);
+  },
+
   getProfile(userId) {
     console.warn("Obsolete method. Please use profileAPI object");
     return profileAPI.getProfile(userId);

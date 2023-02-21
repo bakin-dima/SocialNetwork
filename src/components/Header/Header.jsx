@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { Avatar } from "../common/Avatar/Avatar";
 import styles from "./Header.module.css";
 
 const Header = (props) => {
@@ -11,7 +12,7 @@ const Header = (props) => {
 
       {props.isAuth ? (
         <div className={styles.loginBlock}>
-          <span>{props.login}</span>
+          <span>Hello {props.login}</span>
           <button onClick={props.logout}>log out</button>
         </div>
       ) : (

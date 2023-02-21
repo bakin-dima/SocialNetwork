@@ -3,13 +3,13 @@ import NavbarLink from "./NavbarLink/NavbarLink";
 import NavbarFriend from "./NavbarFriend/NavbarFriend";
 import styles from "./Navbar.module.css";
 
-const Navbar = (props) => {
-  let linkItems = props.sidebar.linksList.map((link) => <NavbarLink title={link.linkTitle} path={link.linkPath} key={link.id} />);
-  let FriendsItems = props.sidebar.friendsList.map((friend) => <NavbarFriend {...friend} key={friend.id} />);
+const Navbar = ({ linksList, followedUsers, isAuth, unfollow, ...props }) => {
+  let linkItems = linksList.map((link) => <NavbarLink title={link.linkTitle} path={link.linkPath} key={link.id} />);
+  let FriendsItems = followedUsers.map((user) => <NavbarFriend user={user} unfollow={unfollow} key={user.id} />);
   return (
     <nav className={styles.nav}>
       <ul>{linkItems}</ul>
-      <div className={styles.friendList}>{FriendsItems}</div>
+      {isAuth && <div className={styles.friendList}>{FriendsItems}</div>}
     </nav>
   );
 };

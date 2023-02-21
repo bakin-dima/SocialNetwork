@@ -1,13 +1,22 @@
 import React from "react";
+import { unfollow } from "../../../redux/usersReducer";
+import { Avatar } from "../../common/Avatar/Avatar";
 import styles from "./NavbarFriend.module.css";
 
-const NavbarFriend = (props) => {
-  let friendName = props.friendFirstName + " " + props.friendLastName;
-
+const NavbarFriend = ({ user, unfollow, ...props }) => {
   return (
     <div className={styles.friend}>
-      <img src={props.friendAvatar} alt="Avatar" />
-      <span>{friendName}</span>
+      <Avatar path={user.photos.small} elementStyle={styles.friendAvatar} />
+      <div className={styles.userName}>
+        <span>{user.name}</span>
+        <button
+          onClick={() => {
+            unfollow(user.id);
+          }}
+        >
+          unfollow
+        </button>
+      </div>
     </div>
   );
 };

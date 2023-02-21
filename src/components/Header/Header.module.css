@@ -8,6 +8,11 @@
   justify-content: space-between;
 }
 
+.header a {
+  color: #3b444b;
+  text-decoration: none;
+}
+
 .logo {
   height: 100%;
 }
