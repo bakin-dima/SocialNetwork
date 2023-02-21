@@ -37,3 +37,10 @@
   grid-area: c;
   overflow-y: scroll;
 }
+
+.error_404 {
+  margin: 0 auto;
+  padding: 10px;
+  text-align: center;
+  font-size: 2rem;
+}

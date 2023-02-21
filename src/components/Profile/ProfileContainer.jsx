@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { getUserProfile, getStatus, updateStatus, savePhoto, saveProfile } from "../../redux/profileReducer";
+import { requestFollowedUsers } from "../../redux/usersReducer";
 import Profile from "./Profile";
 import { Navigate, useLocation, useNavigate, useParams } from "react-router-dom";
 import { compose } from "redux";
@@ -15,7 +16,6 @@ function withRouter(Component) {
 
   return ComponentWithRouterProps;
 }
-
 class ProfileContainer extends React.Component {
   refreshProfile() {
     let userId = this.props.router.params.userId;
@@ -24,8 +24,8 @@ class ProfileContainer extends React.Component {
     }
     this.props.getUserProfile(userId);
     this.props.getStatus(userId);
+    this.props.requestFollowedUsers();
   }
-
   componentDidMount() {
     this.refreshProfile();
   }
@@ -58,6 +58,6 @@ let mapStateToProps = (state) => ({
 });
 
 export default compose(
-  connect(mapStateToProps, { getUserProfile, getStatus, updateStatus, savePhoto, saveProfile }),
+  connect(mapStateToProps, { getUserProfile, getStatus, updateStatus, savePhoto, saveProfile, requestFollowedUsers }),
   withRouter
 )(ProfileContainer);

@@ -37,6 +37,8 @@ const Login = (props) => {
   return (
     <div>
       <h1>LOGIN</h1>
+      <h2>Hello to my Social Network</h2>
+      <br/>
       <LoginReduxForm onSubmit={onSubmit} captchaUrl={props.captchaUrl} />
     </div>
   );
