@@ -1,0 +1,50 @@
+@import "variables";
+
+.app-wrapper {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background: $background_main;
+  color: $base_font;
+}
+
+.app-wrapper__main {
+  display: grid;
+  grid-template-areas:
+    "h h h"
+    "n c c";
+  grid-template-rows: 50px 1fr;
+  grid-template-columns: 20% 10fr;
+
+  width: 100%;
+  max-width: 1200px;
+
+  background: $background_box;
+
+  border-width: 0;
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+
+  margin: 20px 0;
+
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.app-wrapper__content {
+  grid-area: c;
+  overflow-y: scroll;
+}
+
+.error_404 {
+  margin: 0 auto;
+  padding: 10px;
+  text-align: center;
+  font-size: 2rem;
+}

@@ -1,10 +1,12 @@
+@import "../../../variables";
+
 li {
-  margin-top: 10px;
   text-transform: uppercase;
+  margin: 5px 0;
 }
 
 li a {
-  color: #3b444b;
+  color: $base_font;
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -12,14 +14,16 @@ li a {
 
 li a img {
   margin-right: 5px;
+  fill: $base_color;
+  filter: invert(1);
 }
 
 li:hover a {
-  color: #0e1111;
+  color: $base_color;
 }
 
 .active {
-  color: #0e1111;
+  color: $base_color;
   font-weight: bold;
 }
 

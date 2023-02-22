@@ -1,7 +1,7 @@
 import React from "react";
 import NavbarLink from "./NavbarLink/NavbarLink";
 import NavbarFriend from "./NavbarFriend/NavbarFriend";
-import styles from "./Navbar.module.css";
+import styles from "./Navbar.module.scss";
 
 const Navbar = ({ linksList, followedUsers, isAuth, unfollow, ...props }) => {
   let linkItems = linksList.map((link) => <NavbarLink title={link.linkTitle} path={link.linkPath} key={link.id} />);

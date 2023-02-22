@@ -1,0 +1,20 @@
+@import "../../variables";
+
+.header {
+  grid-area: h;
+  display: flex;
+  align-items: center;
+  padding: 0 50px 0 50px;
+  justify-content: space-between;
+}
+
+.login {
+  display: flex;
+  align-items: center;
+  b {
+    color: $base_color;
+  }
+  .title {
+    margin-right: 5px;
+  }
+}

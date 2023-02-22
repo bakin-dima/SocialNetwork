@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "./Users.module.css";
+import styles from "./Users.module.scss";
 import { NavLink } from "react-router-dom";
-import { Avatar } from "../common/Avatar/Avatar";
+import Avatar from "../common/Avatar/Avatar";
 
 let User = ({ user, followingInProgress, unfollow, follow, ...props }) => {
   return (

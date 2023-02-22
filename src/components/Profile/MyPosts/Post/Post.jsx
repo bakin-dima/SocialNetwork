@@ -1,12 +1,12 @@
 import React from "react";
-import styles from "./Post.module.css";
+import styles from "./Post.module.scss";
 import userPhoto from "../../../../assets/images/user_avatar_placeholder.png";
 import likeImage from "../../../../assets/images/like.svg";
+import Avatar from "../../../common/Avatar/Avatar";
 
 const Posts = (props) => (
   <div id={props.id} className={styles.item}>
     <div>
-      <img className={styles.avatar} src={userPhoto} alt="Avatar" />
       <p>{props.message}</p>
     </div>
     <div className={styles.likes}>

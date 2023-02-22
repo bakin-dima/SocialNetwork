@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./FormsControls.module.css";
+import styles from "./FormsControls.module.scss";
 import { Field } from "redux-form";
 
 export const FormControl = ({ children, input, meta: { error, touched } }) => {
@@ -30,8 +30,19 @@ export const Input = (props) => {
   );
 };
 
+export const CheckBox = (props) => {
+  const { input, meta, children, type, id, ...restProps } = props;
+  return (
+    <FormControl {...props}>
+      <input {...input} type={type} id={id} {...restProps} />
+      <label for={id}>{restProps.text}</label>
+    </FormControl>
+  );
+};
+
 export const createField = (placeholder, name, component, validators, props = {}, text = "") => (
-  <div>
-    <Field placeholder={placeholder} name={name} component={component} validate={validators} {...props} /> {text}
+  <div className={styles.field}>
+    <Field placeholder={placeholder} name={name} component={component} validate={validators} {...props} />
+    {/* {label && <label for={name}>{text}</label>} */}
   </div>
 );

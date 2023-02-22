@@ -1,0 +1,80 @@
+@import "../../../variables";
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.field {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+input,
+textarea {
+  width: 200px;
+  color: $base_font;
+  border: 1px solid $base_color;
+  color: $base_font;
+  background: none;
+  padding: 10px;
+  outline: none;
+  :focus {
+    border-color: none;
+    background: none;
+    outline: transparent;
+  }
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+input[type="checkbox"] ~ label {
+  user-select: none;
+  position: relative;
+  &::before {
+    opacity: 0.5;
+    position: absolute;
+    top: 25%;
+    left: -25px;
+    content: "";
+    width: 10px;
+    height: 10px;
+    background: $base_color;
+    border-radius: 50%;
+    z-index: 10;
+    transition: all 0.2s ease;
+  }
+}
+
+input[type="checkbox"]:checked ~ label {
+  &::before {
+    opacity: 1;
+    left: -20px;
+    background: $primary_green;
+  }
+}
+
+textarea {
+  resize: none;
+}
+
+.formControl.error textarea,
+.formControl.error input {
+  border: 1px solid $error;
+}
+
+.formControl.error span {
+  padding: 5px;
+  font-size: 0.8rem;
+  color: $error;
+}
+
+.formSummaryError {
+  text-align: center;
+  padding: 10px;
+  font-weight: 700;
+  color: $error;
+}

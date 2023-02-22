@@ -1,10 +1,11 @@
 import React from "react";
-import styles from "./Dialogs.module.css";
+import styles from "./Dialogs.module.scss";
 import Message from "./Message/Message";
 import DialogItem from "./DialogItem/DialogsItem";
 import { Field, reduxForm } from "redux-form";
 import { Textarea } from "../common/FormsControls/FormsControls";
 import { maxLengthCreator, requiredField } from "../../utils/validators/validators";
+import Button from "../common/Button/Button";
 
 const Dialogs = (props) => {
   let dialogsElements = props.messagesPage.dialogsData.map((d) => <DialogItem id={d.id} key={d.id} name={d.name} />);
@@ -15,9 +16,9 @@ const Dialogs = (props) => {
   };
 
   return (
-    <div className={styles.dialog__page}>
-      <div className={styles.dialogs}>
-        <div className={styles.items}>{dialogsElements}</div>
+    <div className={styles.dialogs}>
+      <div className={styles.block}>
+        <div className={styles.users}>{dialogsElements}</div>
         <div className={styles.messages}>{messagesElements}</div>
       </div>
       <AddMessageFormRedux onSubmit={addNewMessage} />
@@ -31,8 +32,14 @@ const AddMessageForm = (props) => {
   return (
     <form onSubmit={props.handleSubmit}>
       <div className={styles.sendMessage}>
-        <Field component={Textarea} validate={[requiredField, maxLength100]} name={"newMessageBody"} placeholder="Type message here" cols="1px" />
-        <button>Send Message</button>
+        <Field
+          component={Textarea}
+          validate={[requiredField, maxLength100]}
+          name={"newMessageBody"}
+          placeholder="Type message here"
+          cols="1px"
+        />
+        <Button title="Send Message" animation={false} />
       </div>
     </form>
   );

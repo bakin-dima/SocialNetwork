@@ -1,0 +1,32 @@
+/*? PAGINATOR SELECTOR STYLES */
+@import "../../../variables";
+
+.paginator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  button {
+    color: $base_font;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    padding: 2px 3px 2px 3px;
+  }
+  button:disabled {
+    opacity: 0.5;
+  }
+  .active {
+    background-color: $base_color;
+
+    border-radius: 4px;
+  }
+}
+
+.paginatorItemsList {
+  display: flex;
+  justify-content: space-between;
+  button {
+    font-size: 0.8rem;
+  }
+}

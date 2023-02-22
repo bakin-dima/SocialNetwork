@@ -1,7 +1,7 @@
 import React, { Component, lazy, Suspense } from "react";
 import { Navigate, Route, Routes, BrowserRouter, HashRouter } from "react-router-dom";
 import { connect, Provider } from "react-redux";
-import "./App.css";
+import "./App.scss";
 import store from "./redux/reduxStore";
 import { initializeApp } from "./redux/appReducer";
 import NavbarContainer from "./components/Navbar/NavbarContainer";

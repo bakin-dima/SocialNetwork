@@ -4,21 +4,23 @@ import { Navigate } from "react-router-dom";
 import { reduxForm } from "redux-form";
 import { login, logout } from "../../redux/authReducer";
 import { requiredField } from "../../utils/validators/validators";
-import { Input, createField } from "../common/FormsControls/FormsControls";
-import style from "../common/FormsControls/FormsControls.module.css";
+import Button from "../common/Button/Button";
+import { Input, createField, CheckBox } from "../common/FormsControls/FormsControls";
+import styleForm from "../common/FormsControls/FormsControls.module.scss";
+import styles from "./Login.module.scss";
 
 const LoginForm = ({ handleSubmit, error, captchaUrl }) => {
   return (
-    <form onSubmit={handleSubmit}>
+    <form className={styleForm.baseForm} onSubmit={handleSubmit}>
+      {error && <div className={styleForm.formSummaryError}>{error}</div>}
       {createField("Email", "email", Input, [requiredField])}
       {createField("Password", "password", Input, [requiredField], { type: "password" })}
-      {createField(null, "rememberMe", Input, [], { type: "checkbox" }, "Remember Me")}
+      {createField(null, "rememberMe", CheckBox, [], { type: "checkbox", id: "rememberMe", text: "Remember Me", name: "rememberMe" }, "")}
       {captchaUrl && <img src={captchaUrl} alt="captcha" />}
       {captchaUrl && createField("Enter symbols", "captcha", Input, [requiredField])}
-      {error && <div className={style.formSummaryError}>{error}</div>}
-      <div>
-        <button>Login</button>
-      </div>
+
+      <Button title="Login" />
+      {/* <button>Login</button> */}
     </form>
   );
 };
@@ -35,10 +37,9 @@ const Login = (props) => {
   }
 
   return (
-    <div>
+    <div className={styles.login}>
       <h1>LOGIN</h1>
       <h2>Hello to my Social Network</h2>
-      <br/>
       <LoginReduxForm onSubmit={onSubmit} captchaUrl={props.captchaUrl} />
     </div>
   );

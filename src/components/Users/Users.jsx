@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Users.module.css";
+import styles from "./Users.module.scss";
 import Paginator from "../common/Paginator/Paginator";
 import User from "./User";
 

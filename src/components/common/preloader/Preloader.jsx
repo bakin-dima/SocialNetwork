@@ -1,5 +1,5 @@
 import preloader from "../../../assets/images/preloader.svg";
-import styles from "./Preloader.module.css";
+import styles from "./Preloader.module.scss";
 
 let Preloader = (props) => {
   return (

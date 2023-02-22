@@ -1,0 +1,23 @@
+@import "../../../variables";
+
+.postsBlock {
+  margin: 0 15px;
+  h3 {
+    user-select: none;
+    text-transform: uppercase;
+    color: $base_color;
+  }
+}
+
+.postsAddArea {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  height: 150px;
+  textarea {
+    height: 80px;
+  }
+  button {
+    height: 30px;
+  }
+}

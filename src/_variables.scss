@@ -1,0 +1,25 @@
+// * BASE COLORS
+
+$primary_violet: #4d455d;
+$primary_red: #e96479;
+$primary_white: #f5e9cf;
+$primary_green: #7db9b6;
+$primary_black: #0e1111;
+$primary_blue: #0f4c75;
+
+$c1: #141e30;
+$c2: #243b55;
+
+$base_color: $primary_red;
+
+$base_bg_gradient_start: $c1;
+$base_bg_gradient_end: $c2;
+
+$background_main: linear-gradient($base_bg_gradient_start, $base_bg_gradient_end);
+$background_box: rgba(0, 0, 0, 0.5);
+
+// ? FONT COLORS
+$base_font: #eff5f5;
+
+// ! ERROR COLORS
+$error: $primary_red;

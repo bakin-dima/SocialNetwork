@@ -1,0 +1,13 @@
+@import "../../variables";
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h2 {
+    color: $base_color;
+  }
+  form {
+    width: 100%;
+    max-width: 300px;
+  }
+}

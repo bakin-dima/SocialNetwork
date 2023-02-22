@@ -1,0 +1,73 @@
+@import "../../../variables";
+
+.description {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.avatar {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-right: 10px;
+  width: 75px;
+  height: 75px;
+}
+
+.avatarUpload {
+  display: none;
+}
+
+.avatarUploadLabel {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  height: 50%;
+  width: 50%;
+  position: absolute;
+  top: 25%;
+  opacity: 0;
+  filter: invert(1);
+}
+
+.avatarUploadLabel:hover {
+  opacity: 1;
+}
+
+.fullName {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: $base_color;
+  margin-bottom: 10px;
+}
+
+.aboutMe {
+  margin: 0 15px;
+  b {
+    color: $base_color;
+  }
+}
+
+.contacts {
+  display: flex;
+  .links {
+    margin: 0 2px;
+  }
+}
+
+form {
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    span {
+      width: 100px;
+    }
+    input,
+    textarea {
+      width: 100%;
+    }
+  }
+}

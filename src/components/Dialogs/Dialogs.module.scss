@@ -1,0 +1,68 @@
+@import "../../variables";
+
+.dialogs {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.block {
+  display: flex;
+  height: 100%;
+  overflow-y: scroll;
+  margin-right: 10px;
+}
+
+.user {
+  margin-bottom: 5px;
+  a {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    color: $base_font;
+    text-align: left;
+  }
+  a.active {
+    font-weight: 700;
+    color: $base_color;
+  }
+}
+
+.users {
+  width: 100px;
+  overflow-y: scroll;
+}
+
+.messages {
+  width: 100%;
+  .message {
+    word-break: break-all;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+    div {
+      padding: 10px;
+      min-height: 30px;
+      color: $base_font;
+      border: 1px solid $base_color;
+    }
+    span {
+      align-self: end;
+      font-size: 0.7rem;
+    }
+  }
+}
+
+.sendMessage {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 15px;
+
+  textarea {
+    width: 100%;
+  }
+}
